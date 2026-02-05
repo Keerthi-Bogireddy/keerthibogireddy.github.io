@@ -290,3 +290,30 @@ p {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+/* =====================
+   RESUME SECTION
+===================== */
+
+.resume {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.resume h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.resume p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
