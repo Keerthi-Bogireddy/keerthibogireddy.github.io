@@ -155,3 +155,54 @@ p {
     font-size: 1.3rem;
   }
 }
+/* =====================
+   PROJECTS SECTION
+===================== */
+
+.projects {
+  background-color: #ffffff;
+  padding: 100px 12%;
+}
+
+.projects h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+
+.project-card {
+  max-width: 800px;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  margin-bottom: 15px;
+}
+
+.project-card ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.project-card li {
+  margin-bottom: 8px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
