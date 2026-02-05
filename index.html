@@ -8,7 +8,7 @@
 <body>
   <!-- <h1>Hello, I’m Keerthi 👋</h1>
   <p>Aspiring AI/ML Engineer | Analyst | Builder</p> -->
-  <section class="hero">
+  <section class="hero fade-in">
   <h1>Keerthi Bogireddy</h1>
   <h2>Aspiring Data Analyst & Machine Learning Engineer</h2>
 
@@ -23,7 +23,7 @@
     <a href="assets/Keerthi_Bogireddy_Resume.pdf" class="btn secondary">Download Resume</a>
   </div>
 </section>
-<section class="about" id="about">
+<section class="about fade-in" id="about">
   <h2>About Me</h2>
 
   <p>
@@ -63,7 +63,7 @@
     <li>GitHub</li>
   </ul>
 </section>
-<section class="projects" id="projects">
+<section class="projects fade-in" id="projects">
   <h2>Projects</h2>
 
   <div class="project-card">
@@ -93,7 +93,7 @@
     </a>
   </div>
 </section>
-<section class="contact" id="contact">
+<section class="contact fade-in" id="contact">
   <h2>Contact</h2>
 
   <p>
@@ -114,6 +114,24 @@
 <footer class="footer">
   <p>© 2026 Keerthi Bogireddy</p>
 </footer>
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOnScroll = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 
 </body>
 </html>
