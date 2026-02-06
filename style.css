@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -23,6 +27,11 @@ p {
   line-height: 1.7;
 }
 
+/* Helps anchor scrolling */
+section {
+  scroll-margin-top: 80px;
+}
+
 /* =====================
    HERO SECTION
 ===================== */
@@ -34,26 +43,47 @@ p {
   justify-content: center;
   padding: 80px 12%;
   text-align: left;
-  background-color: #F5F1EA;
+  background: linear-gradient(
+    180deg,
+    #F5F1EA 0%,
+    #EFE6DC 100%
+  );
 }
 
 .hero h1 {
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   margin-bottom: 12px;
-  color: #7B1E3A; /* Maroon */
+  color: #7B1E3A;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 span {
+  font-weight: 800;
 }
 
 .hero h2 {
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 1.7rem;
+  font-weight: 600;
   color: #5C142A;
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+/* Accent line under subtitle */
+.hero h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #7B1E3A;
+  margin-top: 16px;
+  border-radius: 2px;
 }
 
 .hero p {
-  max-width: 700px;
+  max-width: 620px;
   font-size: 1.1rem;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 /* =====================
@@ -70,7 +100,13 @@ p {
   padding: 12px 26px;
   border-radius: 8px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(123, 30, 58, 0.15);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(123, 30, 58, 0.25);
 }
 
 .primary {
@@ -85,6 +121,7 @@ p {
 .secondary {
   border: 2px solid #7B1E3A;
   color: #7B1E3A;
+  background-color: transparent;
 }
 
 .secondary:hover {
@@ -99,7 +136,7 @@ p {
 .about {
   max-width: 900px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 90px 20px;
 }
 
 .about h2 {
@@ -148,7 +185,7 @@ p {
 
 .projects {
   background-color: #EFE6DC;
-  padding: 100px 12%;
+  padding: 90px 12%;
 }
 
 .projects h2 {
@@ -158,6 +195,7 @@ p {
 }
 
 .project-card {
+  position: relative;
   max-width: 800px;
   background-color: #F5F1EA;
   padding: 30px;
@@ -165,6 +203,20 @@ p {
   border-left: 6px solid #7B1E3A;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card::before {
+  content: "FEATURED PROJECT";
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background-color: #7B1E3A;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
 }
 
 .project-card:hover {
@@ -209,7 +261,7 @@ p {
 .resume {
   max-width: 900px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 90px 20px;
   text-align: center;
 }
 
@@ -239,7 +291,7 @@ p {
   background-color: #7B1E3A;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 90px 20px;
 }
 
 .contact h2 {
@@ -298,11 +350,6 @@ p {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* =====================
